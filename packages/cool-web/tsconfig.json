@@ -16,7 +16,18 @@
         "name": "next"
       }
     ],
-    "types": ["jest", "node"]
+    "types": [
+      "jest",
+      "node"
+    ],
+    "paths": {
+      "@utils/*": [
+        "packages/cool-web/src/util/*"
+      ],
+      "@components/*": [
+        "packages/cool-web/src/components/*"
+      ]
+    }
   },
   "include": [
     "**/*.ts",
@@ -32,5 +43,5 @@
     "jest.config.ts",
     "src/**/*.spec.ts",
     "src/**/*.test.ts"
-  ]
+  ],
 }

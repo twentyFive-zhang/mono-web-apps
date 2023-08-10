@@ -6,36 +6,48 @@ import Document, {
   NextScript,
   DocumentInitialProps,
 } from 'next/document';
-
-// class MyDocument extends Document {
-//   static async getInitialProps(ctx: DocumentContext) {
-//     const initialProps = await Document.getInitialProps(ctx);
-
-//     return initialProps;
-//   }
-//   render() {
-//     return (
-//       <Html lang="cn">
-//         <Head />
-//         <body>
-//           <Main />
-//           <NextScript />
-//         </body>
-//       </Html>
-//     );
-//   }
-// }
+import { StyleProvider, createCache, extractStyle } from '@ant-design/cssinjs';
 
 export const getInitialProps = async (ctx: DocumentContext) => {
+  const cache = createCache();
+  const originalRenderPage = ctx.renderPage;
+  ctx.renderPage = () =>
+    originalRenderPage({
+      enhanceApp: (App) => (props) =>
+        (
+          <StyleProvider cache={cache}>
+            <App {...props} />
+          </StyleProvider>
+        ),
+    });
+
   const initialProps = await Document.getInitialProps(ctx);
-  console.log({ initialProps });
-  return initialProps;
+  const style = extractStyle(cache, true);
+  return {
+    ...initialProps,
+    styles: (
+      <>
+        {initialProps.styles}
+        <style dangerouslySetInnerHTML={{ __html: style }} />
+      </>
+    ),
+  };
+  // const initialProps = await Document.getInitialProps(ctx);
+  // // console.log({ initialProps });
+  // return initialProps;
 };
 
 const MyDocument = (props: DocumentInitialProps) => {
-  console.log({ props });
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  // console.log(props.__NEXT_DATA__);
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  // const locale = props.__NEXT_DATA__.query.locale;
   return (
-    <Html lang="cn">
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    <Html lang={props.__NEXT_DATA__.query.locale}>
       <Head />
       <body>
         <Main />
