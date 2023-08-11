@@ -41,10 +41,6 @@ jobs:
         run: pnpm install
       - name: Build with Next.js
         run: npx nx run cool-web:export
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: ./dist/packages/cool-web/exported
 
   # Deployment job
   deploy:
@@ -57,5 +53,5 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          # github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist/packages/cool-web/exported
