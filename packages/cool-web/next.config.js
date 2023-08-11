@@ -2,7 +2,7 @@
 console.log(process.env.NODE_ENV)
 process.env.NEXT_TRANSLATE_PATH = '../../';
 
-const { i18n } = require('./next-i18next.config')
+// const { i18n } = require('./next-i18next.config')
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { composePlugins, withNx } = require('@nx/next');
@@ -23,7 +23,7 @@ const nextConfig = {
   experimental: {
     // appDir: true,
   },
-  reactStrictMode: true,
+  // reactStrictMode: true,
 
 };
 

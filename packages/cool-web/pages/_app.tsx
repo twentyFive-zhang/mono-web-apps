@@ -3,16 +3,20 @@ import type { AppProps } from 'next/app';
 import { appWithTranslation } from 'next-i18next';
 import './global.css';
 import { FloatButton } from 'antd';
+import Layout from '@components/Layout';
+import { useRef } from 'react';
 
 function RootLayout({
   Component,
 }: AppProps & {
   Component: NextPage;
 }) {
+  const ref = useRef();
   return (
     <>
-      <Component></Component>
-      <FloatButton.BackTop></FloatButton.BackTop>
+      <Layout>
+        <Component></Component>
+      </Layout>
     </>
   );
 }

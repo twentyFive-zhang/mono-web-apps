@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { useTranslation } from 'next-i18next';
-import { Tooltip } from 'antd';
+import { Divider, Tooltip } from 'antd';
 
 type ITeamList = { name: string; position: string; description: string[] }[];
 
@@ -21,7 +21,7 @@ function TeamIntroduction() {
 
   return (
     <>
-      <div className="px-4 lg:px-8  text-white">
+      <div className="px-4 lg:px-8  text-white py-16">
         <div className="bg-gradient-to-r from-sky-500 to-indigo-500 py-16 rounded-3xl px-4 lg:px-8 filter ">
           <div className="mx-auto max-w-screen-2xl ">
             <div className=" text-5xl  pb-12 text-center font-semibold antialiased">
@@ -36,7 +36,7 @@ function TeamIntroduction() {
                   <div
                     key={i}
                     className={
-                      'mx-auto md:even:ml-0 w-full md:w-2/4 md:odd:mr-0 shadow-lg p-4 bg-white/30 rounded-lg text-white'
+                      'mx-auto md:even:ml-0 w-full lg:w-2/4 md:odd:mr-0 shadow-lg p-4 bg-white/30 rounded-lg text-white'
                     }
                   >
                     <Tooltip
@@ -52,7 +52,7 @@ function TeamIntroduction() {
                       }
                     >
                       <div className="bg-white rounded-lg text-blue-700 p-6 shadow-md">
-                        <div className="w-[130px] h-[130px] bg-black/10 rounded-full mx-auto  "></div>
+                        <div className="w-[100px] h-[100px] lg:w-[120px] lg:h-[120px] bg-black/10 rounded-full mx-auto  "></div>
                         <div className="text-2xl font-bold antialiased mt-4 mb-2  ">
                           {item.name}
                         </div>
@@ -74,7 +74,7 @@ function TeamIntroduction() {
                   <div
                     key={i}
                     className={
-                      'mx-auto w-full md:w-3/4 shadow-lg p-4 bg-white/30 rounded-lg text-white'
+                      'mx-auto w-full lg:w-3/4 shadow-lg p-4 bg-white/30 rounded-lg text-white'
                     }
                   >
                     <Tooltip
@@ -90,7 +90,7 @@ function TeamIntroduction() {
                       }
                     >
                       <div className="bg-white rounded-lg text-blue-700 p-6 shadow-md">
-                        <div className="w-[130px] h-[130px] bg-black/10 rounded-full mx-auto  "></div>
+                        <div className="w-[100px] h-[100px] lg:w-[120px] lg:h-[120px] bg-black/10 rounded-full mx-auto  "></div>
                         <div className="text-2xl font-bold antialiased mt-4 mb-2  ">
                           {item.name}
                         </div>
@@ -107,18 +107,18 @@ function TeamIntroduction() {
               <div className="text-2xl font-semibold my-20 underline">
                 {t('core-team.title')}
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 md:divide-x-2">
+              <div className="">
                 <div className="">
                   <div className="text-xl mb-20">
                     {t('counseling-support-group.title')}
                   </div>
                   <div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div className=" grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10">
                       {counselingGroupData.map((item, i) => (
                         <div
                           key={i}
                           className={
-                            'mx-auto  shadow-lg p-4 w-full md:w-3/4 bg-white/30 rounded-lg text-white'
+                            'mx-auto  shadow-lg  p-4 w-full bg-white/30 rounded-lg text-white'
                           }
                         >
                           <Tooltip
@@ -134,7 +134,7 @@ function TeamIntroduction() {
                             }
                           >
                             <div className="bg-white rounded-lg text-blue-700 p-6 shadow-md">
-                              <div className="w-[130px] h-[130px] bg-black/10 rounded-full mx-auto  "></div>
+                              <div className="w-[100px] h-[100px] lg:w-[120px] lg:h-[120px] bg-black/10 rounded-full mx-auto  "></div>
                               <div className="text-2xl font-bold antialiased mt-4 mb-2  ">
                                 {item.name}
                               </div>
@@ -148,17 +148,18 @@ function TeamIntroduction() {
                     </div>
                   </div>
                 </div>
+                <Divider></Divider>
                 <div className="">
                   <div className="text-xl mb-20">
                     {t('technical-support-group.title')}
                   </div>
                   <div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 ">
                       {technicalGroupData.map((item, i) => (
                         <div
                           key={i}
                           className={
-                            'mx-auto  shadow-lg p-4 w-full md:w-3/4 bg-white/30 rounded-lg text-white'
+                            'mx-auto  shadow-lg p-4 w-full bg-white/30 rounded-lg text-white'
                           }
                         >
                           <Tooltip
@@ -174,7 +175,7 @@ function TeamIntroduction() {
                             }
                           >
                             <div className="bg-white rounded-lg text-blue-700 p-6 shadow-md">
-                              <div className="w-[130px] h-[130px] bg-black/10 rounded-full mx-auto  "></div>
+                              <div className="w-[100px] h-[100px] lg:w-[120px] lg:h-[120px] bg-black/10 rounded-full mx-auto  "></div>
                               <div className="text-2xl font-bold antialiased mt-4 mb-2  ">
                                 {item.name}
                               </div>

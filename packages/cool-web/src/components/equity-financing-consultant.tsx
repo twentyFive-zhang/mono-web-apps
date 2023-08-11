@@ -26,6 +26,10 @@ function EquityFinancingConsultant() {
         <div className="bg-gradient-to-r from-sky-500 to-indigo-500 py-16 rounded-3xl px-4 lg:px-8 filter ">
           <div className="mx-auto max-w-5xl ">
             <div className="text-5xl  pb-12 text-center font-semibold antialiased mb-10">
+              {t('title')}
+            </div>
+
+            <div className="text-3xl font-bold mb-12 mt-16 text-center">
               {t('investment-banking.title')}
             </div>
             <div className="mb-4 text-lg lg:text-lg font-light ">
@@ -43,7 +47,7 @@ function EquityFinancingConsultant() {
               ></Trans>
             </div>
             {/* <Divider style={{ color: '#fff' }} /> */}
-            <div className="divide-y-2 bg-white/0 w-full h-[4px] shadow-inner my-6"></div>
+            <div className="divide-y-2 bg-white/0 w-full h-[4px] shadow-inner mb-6 mt-20"></div>
             <div className="grid grid-cols-1 gap-10 ">
               <div className="text-center">
                 <div className="text-3xl font-bold mb-12 mt-16">
@@ -59,7 +63,8 @@ function EquityFinancingConsultant() {
                 </div>
               </div>
             </div>
-            {/* <div className="divide-y-2 bg-white/0 w-full h-[4px] shadow-inner my-6"></div> */}
+
+            <div className="divide-y-2 bg-white/0 w-full h-[4px] shadow-inner mb-6 mt-20"></div>
             <div className="grid grid-cols-1 gap-10 ">
               <div className="text-center">
                 <div className="text-3xl font-bold mb-12 mt-16">
@@ -81,6 +86,7 @@ function EquityFinancingConsultant() {
                 </div>
               </div>
             </div>
+            <div className="divide-y-2 bg-white/0 w-full h-[4px] shadow-inner mb-6 mt-20"></div>
             <div className="grid grid-cols-1 gap-10">
               <div className="text-center">
                 <div className="text-3xl font-bold mb-12 mt-16">
