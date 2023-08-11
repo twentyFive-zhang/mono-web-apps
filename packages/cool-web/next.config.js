@@ -23,6 +23,7 @@ const nextConfig = {
   experimental: {
     // appDir: true,
   },
+  basePath: process.env.NODE_ENV == "development" ? '' : '/mono-web-apps'
   // reactStrictMode: true,
 
 };
