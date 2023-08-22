@@ -8,6 +8,7 @@ function AboutUs() {
     'company-culture.list',
     { returnObjects: true }
   );
+  
   return (
     <>
       <div className="py-16 px-4 lg:px-8 text-white">
